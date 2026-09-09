@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVIX — Boutique High-Tech Premium</title>
+<meta name="description" content="Smartphones, PC portables, tablettes, écrans, audio, gaming et accessoires high-tech. Commande simple via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- BARRE DE PROGRESSION SCROLL -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAVBAR -->
+<header class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark">N</span>
+      <span class="logo-text">NOVIX</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#top" class="nav-link active">Accueil</a>
+      <a href="#produits" class="nav-link">Produits</a>
+      <a href="#categories" class="nav-link">Catégories</a>
+      <a href="#promotions" class="nav-link">Promotions</a>
+      <a href="#apropos" class="nav-link">À propos</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Rechercher">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icon-btn" id="favToggle" aria-label="Favoris">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 20.5s-7.5-4.6-9.8-9.4C.6 7.4 2.4 4 6 4c2.1 0 3.6 1.2 4.6 2.7C11.6 5.2 13.1 4 15.2 4c3.6 0 5.4 3.4 3.8 7.1C16.5 15.9 12 20.5 12 20.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span class="badge-count" id="favCount">0</span>
+      </button>
+      <button class="icon-btn" id="cartToggle" aria-label="Panier">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 4h2l1.6 10.6a2 2 0 0 0 2 1.7h7.9a2 2 0 0 0 2-1.6L20 8H6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4" fill="currentColor"/><circle cx="17" cy="20" r="1.4" fill="currentColor"/></svg>
+        <span class="badge-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Barre de recherche déroulante -->
+  <div class="search-panel" id="searchPanel">
+    <div class="search-panel-inner">
+      <svg viewBox="0 0 24 24" fill="none" class="search-icon"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <input type="text" id="searchInput" placeholder="Rechercher un smartphone, une marque, un accessoire…" autocomplete="off">
+      <button class="close-btn" id="searchClose">✕</button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</header>
+
+<!-- MENU MOBILE -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#top" class="mobile-link">Accueil</a>
+  <a href="#produits" class="mobile-link">Produits</a>
+  <a href="#categories" class="mobile-link">Catégories</a>
+  <a href="#promotions" class="mobile-link">Promotions</a>
+  <a href="#apropos" class="mobile-link">À propos</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="#" class="mobile-whatsapp-btn" id="mobileWhatsapp">Commander sur WhatsApp</a>
+</div>
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-kicker">Boutique high-tech</p>
+        <h1 class="hero-title">
+          <span class="reveal-line">La technologie,</span>
+          <span class="reveal-line">à portée de main.</span>
+        </h1>
+        <p class="hero-sub reveal-fade">Smartphones, PC, tablettes et accessoires sélectionnés pour répondre à tous vos besoins — du quotidien au gaming, en passant par le travail et la création.</p>
+        <div class="hero-actions reveal-fade">
+          <a href="#produits" class="btn btn-primary">
+            Découvrir nos produits
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary">Nous contacter</a>
+        </div>
+        <div class="hero-stats reveal-fade">
+          <div class="stat"><span class="stat-num" data-count="1200">0</span><span class="stat-label">Produits livrés</span></div>
+          <div class="stat"><span class="stat-num" data-count="35">0</span><span class="stat-label">Marques partenaires</span></div>
+          <div class="stat"><span class="stat-num" data-count="98">0</span><span class="stat-label">% clients satisfaits</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="stack-card card-back">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80" alt="Ordinateur portable">
+        </div>
+        <div class="stack-card card-mid">
+          <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=420&q=80" alt="Smartphone">
+        </div>
+        <div class="stack-card card-front">
+          <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=380&q=80" alt="Écouteurs sans fil">
+        </div>
+        <div class="float-chip chip-1">🎧 Audio Premium</div>
+        <div class="float-chip chip-2">⚡ Livraison rapide</div>
+        <div class="glow-orb"></div>
+      </div>
+    </div>
+    <a href="#categories" class="scroll-cue" aria-label="Défiler">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories" id="categories">
+    <div class="section-head">
+      <h2>Explorez par catégorie</h2>
+      <p>Trouvez rapidement ce qu'il vous faut parmi notre sélection complète.</p>
+    </div>
+    <div class="category-grid" id="categoryGrid">
+      <!-- injecté par JS -->
+    </div>
+  </section>
+
+  <!-- PRODUITS POPULAIRES -->
+  <section class="products-section" id="produits">
+    <div class="section-head">
+      <h2>Produits populaires</h2>
+      <p>Une sélection des articles les plus demandés en ce moment.</p>
+      <div class="quick-sort">
+        <button class="sort-chip active" data-sort="popular">Populaires</button>
+        <button class="sort-chip" data-sort="new">Nouveautés</button>
+        <button class="sort-chip" data-sort="price-asc">Prix croissant</button>
+        <button class="sort-chip" data-sort="price-desc">Prix décroissant</button>
+      </div>
+    </div>
+    <div class="product-grid" id="popularGrid"></div>
+  </section>
+
+  <!-- PROMOTIONS -->
+  <section class="promotions" id="promotions">
+    <div class="section-head light">
+      <h2>Offres du moment</h2>
+      <p>Des prix réduits, valables pour un temps limité.</p>
+    </div>
+    <div class="promo-countdown-bar">
+      <span>Fin des offres dans</span>
+      <div class="countdown" id="countdown">
+        <div class="cd-unit"><span id="cdH">00</span><small>h</small></div>
+        <div class="cd-unit"><span id="cdM">00</span><small>min</small></div>
+        <div class="cd-unit"><span id="cdS">00</span><small>s</small></div>
+      </div>
+    </div>
+    <div class="product-grid promo-grid" id="promoGrid"></div>
+  </section>
+
+  <!-- POURQUOI NOUS CHOISIR -->
+  <section class="why-us" id="apropos">
+    <div class="section-head">
+      <h2>Pourquoi choisir NOVIX</h2>
+      <p>Une expérience d'achat high-tech pensée pour vous simplifier la vie.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">✓</div>
+        <h3>Produits sélectionnés</h3>
+        <p>Chaque référence est choisie pour sa fiabilité et son rapport qualité-prix.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">₪</div>
+        <h3>Prix compétitifs</h3>
+        <p>Des tarifs ajustés en continu pour rester parmi les plus avantageux du marché.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">⚡</div>
+        <h3>Livraison rapide</h3>
+        <p>Expédition sous 24 à 48h dans les principales villes.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛡</div>
+        <h3>Garantie incluse</h3>
+        <p>Tous nos produits bénéficient d'une garantie officielle contre les défauts.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💬</div>
+        <h3>Assistance client</h3>
+        <p>Une équipe disponible pour répondre à vos questions avant et après achat.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📱</div>
+        <h3>Commande via WhatsApp</h3>
+        <p>Passez commande en quelques secondes, sans compte ni formulaire compliqué.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUES -->
+  <section class="brands">
+    <div class="section-head">
+      <h2>Nos marques partenaires</h2>
+    </div>
+    <div class="brands-track" id="brandsTrack"></div>
+  </section>
+
+  <!-- CATALOGUE COMPLET -->
+  <section class="catalog" id="catalogue">
+    <div class="section-head">
+      <h2>Catalogue complet</h2>
+      <p>Filtrez pour trouver exactement ce que vous cherchez.</p>
+    </div>
+
+    <div class="catalog-layout">
+      <button class="filter-mobile-toggle" id="filterMobileToggle">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M7 12h10M10 18h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Filtres
+      </button>
+
+      <aside class="filters-panel" id="filtersPanel">
+        <div class="filters-head">
+          <h3>Filtres</h3>
+          <button class="reset-filters" id="resetFilters">Réinitialiser</button>
+        </div>
+
+        <div class="filter-group">
+          <h4>Catégorie</h4>
+          <div class="filter-options" id="filterCategory"></div>
+        </div>
+
+        <div class="filter-group">
+          <h4>Marque</h4>
+          <div class="filter-options" id="filterBrand"></div>
+        </div>
+
+        <div class="filter-group">
+          <h4>Prix maximum</h4>
+          <input type="range" id="priceRange" min="0" max="30000" step="100" value="30000">
+          <div class="price-range-value">Jusqu'à <span id="priceValue">30 000</span> MAD</div>
+        </div>
+
+        <div class="filter-group">
+          <h4>Disponibilité</h4>
+          <label class="checkbox-row">
+            <input type="checkbox" id="filterStock">
+            <span>En stock uniquement</span>
+          </label>
+        </div>
+
+        <div class="filter-group">
+          <h4>Promotion</h4>
+          <label class="checkbox-row">
+            <input type="checkbox" id="filterPromo">
+            <span>Produits en promotion</span>
+          </label>
+        </div>
+
+        <button class="close-mobile-filters" id="closeMobileFilters">Voir les résultats</button>
+      </aside>
+
+      <div class="catalog-main">
+        <div class="catalog-toolbar">
+          <span id="resultsCount">0 produits</span>
+          <select id="catalogSort">
+            <option value="popular">Trier : Populaires</option>
+            <option value="new">Nouveautés</option>
+            <option value="price-asc">Prix croissant</option>
+            <option value="price-desc">Prix décroissant</option>
+          </select>
+        </div>
+        <div class="product-grid catalog-grid" id="catalogGrid"></div>
+        <p class="no-results" id="noResults" hidden>Aucun produit ne correspond à ces filtres. Essayez d'en retirer quelques-uns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA WHATSAPP -->
+  <section class="cta-whatsapp" id="contact">
+    <div class="cta-inner">
+      <h2>Une question ? Une envie précise ?</h2>
+      <p>Notre équipe répond directement sur WhatsApp, sans attente ni formulaire.</p>
+      <a href="#" class="btn btn-whatsapp" id="ctaWhatsappBtn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2Zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.1 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.4-8.4 8.4Zm4.6-6.3c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.3 0-.5.1-.6.3-.3.6-.6.7-.8.1-.2 0-.4 0-.5-.1-.2-.7-1.6-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.5 1.1 2.6c.2.2 1.8 2.8 4.4 3.8 2.1.9 2.5.7 3 .6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+        Commander sur WhatsApp
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#top" class="logo">
+        <span class="logo-mark">N</span>
+        <span class="logo-text">NOVIX</span>
+      </a>
+      <p>Boutique high-tech spécialisée en smartphones, ordinateurs, tablettes et accessoires. Sélection soignée, prix justes, service réactif.</p>
+      <div class="social-row">
+        <a href="#" class="social-btn" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2Z"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.7"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M14 9h2.5V6H14c-1.9 0-3.3 1.5-3.3 3.4V12H8.5v3H10.7v6h3v-6h2.2l.4-3h-2.6v-2.4c0-.6.4-1 1-1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Catégories</h4>
+      <a href="#categories">Smartphones</a>
+      <a href="#categories">PC portables</a>
+      <a href="#categories">Tablettes</a>
+      <a href="#categories">Audio</a>
+      <a href="#categories">Gaming</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Liens rapides</h4>
+      <a href="#produits">Produits</a>
+      <a href="#promotions">Promotions</a>
+      <a href="#apropos">À propos</a>
+      <a href="#catalogue">Catalogue</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>123 Avenue Hassan II, Fès, Maroc</p>
+      <p>Lun – Sam : 9h00 – 20h00</p>
+      <p id="footerPhone">+212 6 00 00 00 00</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> NOVIX. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- MODALE PRODUIT -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="product-modal" id="productModal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-grid">
+      <div class="modal-image">
+        <img id="modalImg" src="" alt="">
+        <span class="modal-badge new" id="modalBadgeNew" hidden>Nouveau</span>
+        <span class="modal-badge promo" id="modalBadgePromo" hidden>Promo</span>
+      </div>
+      <div class="modal-info">
+        <span class="modal-brand" id="modalBrand"></span>
+        <h2 id="modalName"></h2>
+        <div class="modal-rating" id="modalRating"></div>
+        <div class="modal-price-row">
+          <span class="modal-price" id="modalPrice"></span>
+          <span class="modal-old-price" id="modalOldPrice"></span>
+          <span class="modal-discount" id="modalDiscount"></span>
+        </div>
+        <p class="modal-desc" id="modalDesc"></p>
+        <ul class="modal-specs" id="modalSpecs"></ul>
+        <div class="modal-stock" id="modalStock"></div>
+
+        <div class="modal-qty-row">
+          <span>Quantité</span>
+          <div class="qty-stepper">
+            <button id="modalQtyMinus">−</button>
+            <span id="modalQtyValue">1</span>
+            <button id="modalQtyPlus">+</button>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="modalAddCart">Ajouter au panier</button>
+          <button class="btn btn-whatsapp" id="modalWhatsapp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2Z"/></svg>
+            Contacter sur WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PANIER LATERAL -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>Votre panier</h3>
+    <button class="modal-close" id="cartClose">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-empty" id="cartEmpty">
+    <p>Votre panier est vide.</p>
+    <a href="#produits" class="btn btn-secondary" id="cartEmptyLink">Voir les produits</a>
+  </div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-total-row">
+      <span>Total</span>
+      <span id="cartTotal">0 MAD</span>
+    </div>
+    <a href="#" class="btn btn-whatsapp full" id="cartWhatsappBtn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2Z"/></svg>
+      Commander via WhatsApp
+    </a>
+  </div>
+</aside>
+
+<!-- FAVORIS LATERAL -->
+<aside class="fav-drawer" id="favDrawer">
+  <div class="cart-head">
+    <h3>Vos favoris</h3>
+    <button class="modal-close" id="favClose">✕</button>
+  </div>
+  <div class="cart-items" id="favItems"></div>
+  <div class="cart-empty" id="favEmpty">
+    <p>Aucun favori pour le moment.</p>
+  </div>
+</aside>
+
+<!-- BOUTON RETOUR EN HAUT -->
+<button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- BOUTON WHATSAPP FLOTTANT -->
+<a href="#" class="whatsapp-float" id="whatsappFloat" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2Zm0 18c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3C4.1 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.4-8.4 8.4Zm4.6-6.3c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1-1.3-.6-2.1-1.1-3-2.5-.2-.3 0-.5.1-.6.3-.3.6-.6.7-.8.1-.2 0-.4 0-.5-.1-.2-.7-1.6-.9-2.1-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s.9 2.5 1.1 2.6c.2.2 1.8 2.8 4.4 3.8 2.1.9 2.5.7 3 .6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<!-- TOAST NOTIFICATIONS -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
